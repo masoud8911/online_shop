@@ -27,7 +27,8 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    password = ReadOnlyPasswordHashField(help_text="You can change password using <a href=\"../password/\">this form</a>")
+    password = ReadOnlyPasswordHashField(
+        help_text="You can change password using <a href=\"../password/\">this form</a>")
 
     class Meta:
         model = User
@@ -57,3 +58,8 @@ class UserRegisterForm(forms.Form):
 
 class VerifyCodeForm(forms.Form):
     code = forms.IntegerField(widget=forms.NumberInput(attrs={'class': 'form-control fr-d'}))
+
+
+class UserLoginForm(forms.Form):
+    phone_number = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control fr-d'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control fr-d'}))
