@@ -35,11 +35,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Local app
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'orders.apps.OrdersConfig',
+    # third-party app
     'storages',
     'django_celery_beat',
+    'ckeditor',
 
 ]
 
@@ -149,3 +152,8 @@ AUTH_USER_MODEL = 'accounts.User'
 #AWS_S3_FILE_OVERWRITE = False
 #AWS_LOCAL_STORAGE = f'{BASE_DIR}/aws/'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}

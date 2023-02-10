@@ -5,7 +5,7 @@
     <small>{{ product.created }}</small>
     <p>{{ product.price }} Rials</p>
     <img src="{{ product.image.url }}" style="width: 300px">
-    <p>{{ product.description }}</p>
+    <p>{{ product.description|safe }}</p>
 
     <form action="{% url 'orders:cart_add' product.id %}" method="post">
         {% csrf_token %}
